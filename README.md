@@ -7,6 +7,6 @@ Installation:
     cd ~/.vim
     git submodule init
     git submodule update
-    mkdir ./autoload && cp ./bundle/pathogen/autoload/pathogen.vim ./autoload
+    mkdir -p ./autoload && cp ./bundle/pathogen/autoload/pathogen.vim ./autoload
     
     cp ~/.vimrc ~/
