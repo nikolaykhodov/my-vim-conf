@@ -27,15 +27,6 @@ set autoindent
 set tabstop=4 
 set expandtab
 
-" Tab switching
-set tabpagemax=20
-if version >= 700
-  map <C-t> <Esc>:tabnew<CR>
-  map <A-PageDown> <Esc>:tabnext<CR>
-  map <A-PageUp> <Esc>:tabprev<CR>
-	
-endif
-
 " Save session on quitting Vim
 autocmd VimLeave * NERDTreeClose
 
@@ -108,3 +99,12 @@ if 'VIRTUAL_ENV' in os.environ:
     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
     execfile(activate_this, dict(__file__=activate_this))
 EOF
+
+
+" PyLint
+autocmd FileType python compiler pylint
+let g:pylint_onwrite = 0
+let g:pylint_show_rate = 0
+let g:pylint_cwindow = 0
+let g:pylint_signs = 1
+
