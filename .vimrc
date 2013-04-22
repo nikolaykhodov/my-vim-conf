@@ -19,8 +19,6 @@ set expandtab
 " Enable russian layout
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
-" Better color maps for syntax highlighting
-set background=dark
 
 " Folding
 set foldmethod=indent
@@ -33,8 +31,17 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 
 " Syntax Highlighting and Validation
-syntax on                           " syntax highlighing
-filetype on                          " try to detect filetypes
+
+" Enable syntax highlighing
+syntax on                           
+
+" Better color maps for syntax highlighting
+set background=dark
+
+colorscheme solarized
+
+" Try to detect filetypes
+filetype on                          
 filetype plugin on
 filetype plugin indent on    " enable loading indent file for filetype
 
@@ -54,7 +61,6 @@ if 'VIRTUAL_ENV' in os.environ:
     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
     execfile(activate_this, dict(__file__=activate_this))
 EOF
-
 
 " Strip trailing whitespaces
 autocmd FileType c,cpp,java,php,js,py autocmd BufWritePre <buffer> :%s/\s\+$//g
