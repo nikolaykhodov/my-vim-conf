@@ -14,7 +14,6 @@ set incsearch
 
 filetype plugin on
 
-
 set wildchar=<Tab> wildmenu wildmode=full
 
 "Easy buffer switching"
@@ -49,44 +48,18 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
-
-" Task List
-map <leader>td <Plug>TaskList
-
-" Revision History
-map <leader>g :GundoToggle<CR>
-
-
 " Syntax Highlighting and Validation
 syntax on                           " syntax highlighing
 filetype on                          " try to detect filetypes
 filetype plugin indent on    " enable loading indent file for filetype
 
 " PEP8
-let g:pep8_map='<leader>8'
+let g:pep8_map='<F8>'
 
 " Code Completion
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
-
-" Refactoring and Go to definition
-map <leader>j :RopeGotoDefinition<CR>
-map <leader>r :RopeRename<CR>
-
-" Searching
-nmap <leader>a <Esc>:Ack!
-
-
-" py.test
-" Execute the tests
-nmap <silent><Leader>tf <Esc>:Pytest file<CR>
-nmap <silent><Leader>tc <Esc>:Pytest class<CR>
-nmap <silent><Leader>tm <Esc>:Pytest method<CR>
-" cycle through test errors
-nmap <silent><Leader>tn <Esc>:Pytest next<CR>
-nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
-nmap <silent><Leader>te <Esc>:Pytest error<CR>
 
 " Add the virtualenv's site-packages to vim path
 py << EOF
@@ -101,10 +74,5 @@ if 'VIRTUAL_ENV' in os.environ:
 EOF
 
 
-" PyLint
-autocmd FileType python compiler pylint
-let g:pylint_onwrite = 0
-let g:pylint_show_rate = 0
-let g:pylint_cwindow = 0
-let g:pylint_signs = 1
-
+" Strip trailing whitespaces
+autocmd FileType c,cpp,java,php,js,py autocmd BufWritePre <buffer> :%s/\s\+$//g
