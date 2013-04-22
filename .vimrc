@@ -3,22 +3,12 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-"Ctrl+L switches search highlighting"
 nnoremap <C-S-n> :NERDTreeToggle<CR>
 
 " Searching
-
 autocmd InsertEnter * :setlocal nohlsearch
 autocmd InsertLeave * :setlocal hlsearch
 set incsearch
-
-filetype plugin on
-
-set wildchar=<Tab> wildmenu wildmode=full
-
-"Easy buffer switching"
-set wildcharm=<C-Z>
-nnoremap <F10> :b <C-Z>
 
 " Autoindenting
 set shiftwidth=4
@@ -26,13 +16,7 @@ set autoindent
 set tabstop=4 
 set expandtab
 
-" Save session on quitting Vim
-autocmd VimLeave * NERDTreeClose
-
-"Restore session on starting Vim
-autocmd VimEnter * NERDTree
-
-filetype plugin indent on
+" Enable russian layout
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
 " Better color maps for syntax highlighting
@@ -51,10 +35,8 @@ map <c-h> <c-w>h
 " Syntax Highlighting and Validation
 syntax on                           " syntax highlighing
 filetype on                          " try to detect filetypes
+filetype plugin on
 filetype plugin indent on    " enable loading indent file for filetype
-
-" PEP8
-let g:pep8_map='<F8>'
 
 " Code Completion
 au FileType python set omnifunc=pythoncomplete#Complete
