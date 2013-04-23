@@ -36,8 +36,9 @@ map <c-h> <c-w>h
 syntax on                           
 
 " Better color maps for syntax highlighting
+set term=screen-256color
+set t_Co=256
 set background=dark
-
 colorscheme solarized
 
 " Try to detect filetypes
