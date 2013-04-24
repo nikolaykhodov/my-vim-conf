@@ -35,10 +35,13 @@ map <c-h> <c-w>h
 " Enable syntax highlighing
 syntax on                           
 
+" Show line numbers
+set number
+
 " Better color maps for syntax highlighting
 set term=screen-256color
 set t_Co=256
-set background=dark
+set background=light
 colorscheme solarized
 
 " Try to detect filetypes

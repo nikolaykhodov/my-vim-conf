@@ -9,4 +9,4 @@ Installation:
     git submodule update
     mkdir -p ./autoload && cp ./bundle/pathogen/autoload/pathogen.vim ./autoload
     
-    cp ./.vimrc ~/
+    ln -s ./.vimrc ~/.vimrc
