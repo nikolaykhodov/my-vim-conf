@@ -11,9 +11,9 @@ autocmd InsertLeave * :setlocal hlsearch
 set incsearch
 
 " Autoindenting
-set shiftwidth=4
+set shiftwidth=2
 set autoindent
-set tabstop=4 
+set tabstop=2
 set expandtab
 
 " Enable russian layout
@@ -67,7 +67,7 @@ if 'VIRTUAL_ENV' in os.environ:
 EOF
 
 " Strip trailing whitespaces
-autocmd FileType c,cpp,java,php,js,py,htm,html,gs autocmd BufWritePre <buffer> :%s/\s\+$//g
+autocmd FileType c,cpp,java,php,js,py autocmd BufWritePre <buffer> :%s/\s\+$//g
 
 " Ignore too long lines
 let g:pymode_lint_ignore = "E501"
