@@ -71,3 +71,8 @@ autocmd FileType c,cpp,java,php,js,py autocmd BufWritePre <buffer> :%s/\s\+$//g
 
 " Ignore too long lines
 let g:pymode_lint_ignore = "E501"
+
+" Coffeescript
+call pathogen#infect()
+syntax enable
+filetype plugin indent on
