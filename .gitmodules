@@ -22,3 +22,6 @@
 [submodule "bundle/vim-jade"]
 	path = bundle/vim-jade
 	url = git@github.com:nikolaykhodov/vim-jade.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = git@github.com:nikolaykhodov/vim-markdown.git
